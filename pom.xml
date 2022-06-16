@@ -10,6 +10,7 @@
     <module>eureka-server02</module>
     <module>eureka01-client</module>
     <module>eureka02-client</module>
+      <module>eureka03-client</module>
   </modules>
   <parent>
     <groupId>org.springframework.boot</groupId>
