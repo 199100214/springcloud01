@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    druid:
+      db-type: com.alibaba.druid.pool.DruidDataSource
+      initialSize: 20
+      minIdle: 10
+      max-active: 100
+    url: jdbc:mysql://localhost:3306/zt?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+  application:
+    name: eureka-server-client
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+server:
+  port: 9000 #默认的端口
+eureka:
+  instance:
+    hostname: eureka02 #主机名字 不配置的时候根据操作系统的主机名来获取
+    prefer-ip-address: true #页面显示的是ip+端口号
+    instance-id: ${spring.cloud.client.ip-address}:${server.port} # ip:port
+  client:
+    service-url:    #注册中心对外暴露的注册地址
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
